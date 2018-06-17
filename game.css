@@ -1,0 +1,364 @@
+@keyframes pulsate {
+  30% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
+  }
+}
+@keyframes light {
+  0% {
+    color: #ddd;
+    text-shadow: 0px -1px 0px #000;
+  }
+  50% {
+    color: #fff;
+    text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff;
+  }
+  100% {
+    color: #ddd;
+    text-shadow: 0px -1px 0px #000;
+  }
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+html body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  height: inherit;
+  background: url(assets/images/backgrounds/gameBckg.jpg) no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body .scale {
+  position: absolute;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+html body .scale .progress {
+  position: relative;
+  width: 420px;
+  height: 30px;
+  overflow: hidden;
+  background: #ff3232;
+}
+html body .scale .progress .heart {
+  position: absolute;
+  left: 2px;
+  width: 17px;
+  height: 28px;
+  background-color: #43e7f6;
+  border-radius: 50px 50px 0 0;
+  /** transform: rotate(31deg);**/
+}
+html body .scale .progress .heart:hover:before {
+  box-shadow: none;
+}
+html body .scale .progress .heart:before {
+  position: absolute;
+  width: 28px;
+  height: 17px;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-color: #43e7f6;
+  box-shadow: 0 3px 3px #444444;
+  border-radius: 0 50px 50px 0;
+}
+html body .scale .progress .heart:before:before {
+  box-shadow: none;
+}
+html body .scale .progress .grayback {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+}
+html body .scale .progress .grayback.player {
+  left: 100%;
+  /* Текущее состояние */
+}
+html body .scale .progress .grayback.monster {
+  left: 100%;
+}
+html body .scale .name-player {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  color: #2b14dc;
+  font-size: 28px;
+  display: block;
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+}
+html body .scale .number-of-score {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: #2b14dc;
+  font-size: 28px;
+  display: block;
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+}
+html body .wrapper-form {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(88, 75, 22, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body .wrapper-form .options-form {
+  font-family: 'Poiret One', cursive;
+  font-size: 24px;
+  font-weight: 800;
+  padding: 20px;
+  color: #725a03;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(249, 249, 104, 0.4);
+}
+html body .wrapper-form .options-form h2 {
+  font-size: 28px;
+}
+html body .wrapper-form .options-form fieldset {
+  text-align: center;
+  border: solid 1px #725a03;
+}
+html body .wrapper-form .options-form fieldset legend {
+  font-size: 22px;
+  text-align: center;
+}
+html body .wrapper-form .options-form fieldset label {
+  font-family: 'Poiret One', cursive;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  text-align: left;
+}
+html body .wrapper-form .options-form button {
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  font: bold 16px arial;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: #ccc;
+  background-color: #967c03;
+  background-image: linear-gradient(top, #888 0%, #555 100%);
+  border: none;
+  border-radius: 3px;
+  text-shadow: 0px -1px 0px #000;
+  box-shadow: 0 1px 0 #725a03, 0 5px 0 #725a03, 0 6px 6px rgba(0, 0, 0, 0.6);
+  transition: ease 0.15s;
+  animation: none;
+}
+html body .wrapper-form .options-form button:hover,
+html body .wrapper-form .options-form button:focus {
+  outline: none;
+  animation: linear 1.2s light infinite;
+}
+html body .wrapper-form .options-form button:active {
+  color: #fff;
+  text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff;
+  box-shadow: 0 1px 0 #725a03, 0 2px 0 #444, 0 2px 2px rgba(114, 90, 3, 0.9);
+  transform: translateY(3px);
+  animation: none;
+}
+html body .wrapper-form .options-form button::before,
+html body .wrapper-form .options-form button:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border: 12px double rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+html body .wrapper-form .options-form button:after {
+  width: 60px;
+  height: 60px;
+  border-width: 6px;
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+html body .wrapper-form .options-form button:hover:before,
+html body .wrapper-form .options-form button:hover:after {
+  animation: pulsate 1.2s infinite;
+}
+html body .start-menu {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(88, 75, 22, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body .start-menu .text-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(249, 249, 104, 0.4);
+  margin: 30px;
+  padding: 20px;
+}
+html body .start-menu .text-menu p {
+  font-family: 'Poiret One', cursive;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 20px;
+  color: #725a03;
+  text-align: center;
+}
+html body .start-menu .text-menu button {
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  font: bold 16px arial;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: #ccc;
+  background-color: #967c03;
+  background-image: linear-gradient(top, #888 0%, #555 100%);
+  border: none;
+  border-radius: 3px;
+  text-shadow: 0px -1px 0px #000;
+  box-shadow: 0 1px 0 #725a03, 0 5px 0 #725a03, 0 6px 6px rgba(0, 0, 0, 0.6);
+  transition: ease 0.15s;
+  animation: none;
+}
+html body .start-menu .text-menu button:hover,
+html body .start-menu .text-menu button:focus {
+  outline: none;
+  animation: linear 1.2s light infinite;
+}
+html body .start-menu .text-menu button:active {
+  color: #fff;
+  text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff;
+  box-shadow: 0 1px 0 #725a03, 0 2px 0 #444, 0 2px 2px rgba(114, 90, 3, 0.9);
+  transform: translateY(3px);
+  animation: none;
+}
+html body .start-menu .text-menu button::before,
+html body .start-menu .text-menu button:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border: 12px double rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+html body .start-menu .text-menu button:after {
+  width: 60px;
+  height: 60px;
+  border-width: 6px;
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+html body .start-menu .text-menu button:hover:before,
+html body .start-menu .text-menu button:hover:after {
+  animation: pulsate 1.2s infinite;
+}
+html body .invisible {
+  display: none;
+}
+html body .stage-container {
+  width: 640px;
+  height: 480px;
+  border: 2px solid black;
+  background: url(assets/images/backgrounds/honeycomb.png);
+}
+html body .modal {
+  background-color: rgba(88, 75, 22, 0.5);
+  background-size: cover;
+  position: absolute;
+}
+html body .modal h3 {
+  align-self: center;
+}
+html body .modal.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+}
+html body .modal.visible .modal-wrapper {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  position: relative;
+}
+html body .modal.visible .modal-wrapper button {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 32.5px;
+  background: rgba(88, 75, 22, 0.8) url(assets/images/iconsSprite.png);
+}
+html body .modal.visible .modal-wrapper button:first-child {
+  background-position: 0 0;
+  top: -30%;
+  left: 20%;
+}
+html body .modal.visible .modal-wrapper button:nth-child(2) {
+  background-position: -110px 0;
+  left: 43%;
+  top: 220%;
+}
+html body .modal.visible .modal-wrapper button:nth-child(3) {
+  background-position: -224px 0;
+  right: 20%;
+  top: 30%;
+}
+html body .modal.visible .modal-wrapper button:nth-child(4) {
+  background-position: -330px 0;
+  bottom: 220%;
+  left: 43%;
+}
+html body .task-modal {
+  border: 2px solid rgba(249, 249, 104, 0.4);
+  color: white;
+  position: absolute;
+  width: 400px;
+  padding: 40px;
+  background-color: rgba(88, 75, 22, 0.5);
+}

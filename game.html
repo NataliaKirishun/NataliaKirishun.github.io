@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="game.css">
+    <script defer src="game.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|Pangolin" rel="stylesheet">
+</head>
+<body>
+<div class="scale invisible" id="scalePart">
+    <div class="progress">
+        <div class="heart"></div>
+        <div class="grayback player" id="playerScore"></div>
+        <div class="name-player" id="playerName">Винни-Пух</div>
+        <div class="number-of-score" id="playerScoreNumber">100</div>
+    </div>
+    <div class="progress">
+        <div class="heart"></div>
+        <div class="grayback monster" id="monsterScore"></div>
+        <div class="name-player" id="monsterName">Монстр</div>
+        <div class="number-of-score" id="monsterScoreNumber">100</div>
+    </div>
+</div>
+
+<div class="wrapper-form invisible">
+<form name="optionsForm" class="options-form">
+    <h2>Давайте знакомиться!</h2>
+    <fieldset class="profile-field">
+        <legend>Регистрация</legend>
+        <label for="firstNameInput" class="form-label">Ваше имя
+            <input type="text" class="form-input" id="firstNameInput" name="firstNameInput"
+                   placeholder="Ваше Имя"
+                   required>
+        </label>
+
+        <label for="lastNameInput" class="form-label">Ваша Фамилия
+            <input type="text" class="form-input" id="lastNameInput" name="lastNameInput"
+                   placeholder="Ваша Фамилия" required>
+        </label>
+
+        <label for="ageInput" class="form-label">Ваш возраст
+            <input type="text" class="form-input" id="ageInput" name="ageInput"
+                   placeholder="Ваш Возраст" required>
+        </label>
+    </fieldset>
+    <button type="submit" class="form-btn">Старт</button>
+</form>
+</div>
+
+<div id='startGame' class="start-menu">
+    <div class="text-menu">
+        <p>Помоги Винни-Пуху собрать мёд из гнезд пчёл.<br/>
+            Тебе необходимо сразиться в интеллектуальной игре против пчел-монстров.<br/>
+            С каждым правильно выполненным заданием Винни-Пух становится всё ближе и ближе к заветному лакомству.<br/>
+        </p>
+        <button type="button" id="btnStart">Продолжить</button>
+    </div>
+</div>
+<div id="container" class="stage-container invisible"></div>
+
+<div class="modal invisible" id="modalWindow">
+
+    <div class="modal-wrapper">
+        <button type="button" id="first"></button>
+        <button type="button" id="second"></button>
+        <button type="button" id="third"></button>
+        <button type="button" id="forth"></button>
+    </div>
+</div>
+
+<div id="taskModal" class="task-modal invisible">
+
+</div>
+
+</body>
+</html>

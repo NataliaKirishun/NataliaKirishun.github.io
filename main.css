@@ -1,0 +1,152 @@
+@keyframes move {
+  0% {
+    text-shadow: 4px -4px 0 #ff0000, 3px -3px 0 #ff0000, 2px -2px 0 #ff0000, 1px -1px 0 #ff0000, -4px 4px 0 #00ffff, -3px 3px 0 #00ffff, -2px 2px 0 #00ffff, -1px 1px 0 #00ffff;
+  }
+  25% {
+    text-shadow: -4px -4px 0 #00ffff, -3px -3px 0 #00ffff, -2px -2px 0 #00ffff, -1px -1px 0 #00ffff, 4px 4px 0 #ff0000, 3px 3px 0 #ff0000, 2px 2px 0 #ff0000, 1px 1px 0 #ff0000;
+  }
+  50% {
+    text-shadow: -4px 4px 0 #ff0000, -3px 3px 0 #ff0000, -2px 2px 0 #ff0000, -1px 1px 0 #ff0000, 4px -4px 0 #00ffff, 3px -3px 0 #00ffff, 2px -2px 0 #00ffff, 1px -1px 0 #00ffff;
+  }
+  75% {
+    text-shadow: 4px 4px 0 #00ffff, 3px 3px 0 #00ffff, 2px 2px 0 #00ffff, 1px 1px 0 #00ffff, -4px -4px 0 #ff0000, -3px -3px 0 #ff0000, -2px -2px 0 #ff0000, -1px -1px 0 #ff0000;
+  }
+  100% {
+    text-shadow: 4px -4px 0 #ff0000, 3px -3px 0 #ff0000, 2px -2px 0 #ff0000, 1px -1px 0 #ff0000, -4px 4px 0 #00ffff, -3px 3px 0 #00ffff, -2px 2px 0 #00ffff, -1px 1px 0 #00ffff;
+  }
+}
+.hide {
+  visibility: hidden;
+}
+.invisible {
+  display: none;
+}
+* {
+  outline: none;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  height: inherit;
+  background: url(assets/images/backgrounds/blueSky.jpg);
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr 60px;
+}
+html body header {
+  width: 100%;
+  grid-area: 0.25;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Poiret One', cursive;
+  position: fixed;
+}
+html body header h1 {
+  font-family: 'Pangolin', cursive;
+  font-size: 36px;
+  color: #506787;
+  font-weight: 800;
+  text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0, 0, 0, 0.15), 0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1);
+}
+html body header nav li {
+  list-style: none;
+  display: inline-flex;
+  padding: 0 8px;
+}
+html body header nav li a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #506787;
+  text-shadow: 1px 1px 0 #999,
+            2px 2px 0 #999;
+}
+html body main {
+  grid-area: 0.08333333;
+  width: 100%;
+}
+html body main section {
+  height: calc(100vh - 140px);
+  margin: 80px 60px 60px;
+}
+html body main .start-game {
+  background: url(assets/images/backgrounds/background.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body main .start-game a {
+  line-height: 30px;
+  font-family: 'Poiret One', cursive;
+  background-color: #d6e4f4;
+  color: #1a2c42;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #1a2c42;
+  border-radius: 6px;
+  padding: 10px;
+}
+html body main .about-game {
+  background: url(assets/images/backgrounds/backgroundAboutGame.jpg) no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body main .about-game p {
+  font-family: 'Poiret One', cursive;
+  width: 50%;
+  background-color: rgba(139, 165, 188, 0.9);
+  font-size: 26px;
+  padding: 20px;
+  font-weight: 800;
+  color: #d6e4f4;
+  border-radius: 12px;
+}
+html body main .gallery {
+  background: url(assets/images/backgrounds/bacgroundGallery.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+html body main .gallery img {
+  width: 25vw;
+}
+html body main .gallery img:first-child {
+  transform: rotate(-10deg);
+}
+html body main .gallery img:nth-child(3) {
+  transform: rotate(10deg);
+}
+html body main .gallery img:hover {
+  transform: scale(1.5);
+  border: 4px solid brown;
+}
+html body footer {
+  grid-area: 0.04166667;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  text-align: right;
+}
+html body footer span {
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  font-weight: 800;
+}
